@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: "local"
+  main:
+    banner-mode: "off"
+
+
+
+
+  # RabbitMQ properties
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest

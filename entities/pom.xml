@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.greensnow25</groupId>
+    <artifactId>entities</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <name>SpringEntities</name>
+
+
+
+    <dependencies>
+        <!-- Spring data mongodb -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.2.0.RELEASE</version>
+        </dependency>
+    </dependencies>
+
+</project>
