@@ -18,7 +18,7 @@ import java.util.PriorityQueue;
 public class User {
 
     @Id
-    private Long id;
+    private String id;
 
     private String name;
 
@@ -27,11 +27,11 @@ public class User {
     @DBRef
     private List<Token> tokens;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

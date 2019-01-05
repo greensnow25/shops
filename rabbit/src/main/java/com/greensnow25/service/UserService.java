@@ -9,8 +9,10 @@ import com.greensnow25.User;
  * @version 1.0.
  * 09.12.18
  */
-public interface MessangerService {
+public interface UserService {
 
     User getUserById(Long Id);
+
+    void addUser(User user);
 
 }

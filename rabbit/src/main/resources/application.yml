@@ -1,14 +1,42 @@
+
+ # Spring properties
 spring:
   profiles:
     active: "local"
   main:
     banner-mode: "off"
-
-
-
-
   # RabbitMQ properties
   rabbitmq:
     addresses: localhost:5672
     username: guest
     password: guest
+    listener:
+      simple:
+        concurrency: 4
+        max-concurrency: 8
+        retry:
+          initial-interval: 8000
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: shop
+  # Server properties
+server:
+  port: 8080
+
+
+
+
+ # Application properties
+application:
+  exchange:
+    name: request
+  queue:
+    name: usersProcessing
+  routing:
+    key:
+
+#      app1-exchange
+#      app1.queue.name=app1-queue
+#      app1.routing.key=app1-routing-key

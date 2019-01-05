@@ -42,26 +42,25 @@ public class RabbitConfiguration {
     /* Creating a bean for the Message queue Exchange */
     @Bean
     public TopicExchange getApp1Exchange() {
-        return new TopicExchange(applicationConfig().getApp1Exchange());
+        return new TopicExchange(applicationConfig().getApplicationExchange());
     }
 
     /* Creating a bean for the Message queue */
     @Bean
     public Queue getApp1Queue() {
-        return new Queue(applicationConfig().getApp1Queue());
+        return new Queue(applicationConfig().getApplicationQueue());
     }
 
     /* Binding between Exchange and Queue using routing key */
     @Bean
     public Binding declareBindingApp1() {
-        return BindingBuilder.bind(getApp1Queue()).to(getApp1Exchange()).with(applicationConfig().getApp1RoutingKey());
+        return BindingBuilder.bind(getApp1Queue()).to(getApp1Exchange()).with(applicationConfig().getApplicationRoutingKey());
     }
 
     /* Bean for rabbitTemplate */
     @Bean
     public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-//        rabbitTemplate.setConnectionFactory(getConnectionFactory());
         rabbitTemplate.setMessageConverter(producerJackson2MessageConverter());
         return rabbitTemplate;
     }

@@ -13,67 +13,37 @@ import org.springframework.context.annotation.PropertySource;
  * 09.12.18
  */
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application.yml")
 public class ApplicationConfigReader {
 
-    @Value("${app1.exchange.name}")
-    private String app1Exchange;
-    @Value("${app1.queue.name}")
-    private String app1Queue;
-    @Value("${app1.routing.key}")
-    private String app1RoutingKey;
-    @Value("${app2.exchange.name}")
-    private String app2Exchange;
-    @Value("${app2.queue.name}")
-    private String app2Queue;
-    @Value("${app2.routing.key}")
-    private String app2RoutingKey;
+    @Value("${application.exchange.name}")
+    private String applicationExchange;
+    @Value("${application.queue.name}")
+    private String applicationQueue;
+    @Value("${application.routing.key}")
+    private String applicationRoutingKey;
 
-    public String getApp1Exchange() {
-        return app1Exchange;
+    public String getApplicationExchange() {
+        return applicationExchange;
     }
 
-    public void setApp1Exchange(String app1Exchange) {
-        this.app1Exchange = app1Exchange;
+    public void setApplicationExchange(String applicationExchange) {
+        this.applicationExchange = applicationExchange;
     }
 
-    public String getApp1Queue() {
-        return app1Queue;
+    public String getApplicationQueue() {
+        return applicationQueue;
     }
 
-    public void setApp1Queue(String app1Queue) {
-        this.app1Queue = app1Queue;
+    public void setApplicationQueue(String applicationQueue) {
+        this.applicationQueue = applicationQueue;
     }
 
-    public String getApp1RoutingKey() {
-        return app1RoutingKey;
+    public String getApplicationRoutingKey() {
+        return applicationRoutingKey;
     }
 
-    public void setApp1RoutingKey(String app1RoutingKey) {
-        this.app1RoutingKey = app1RoutingKey;
-    }
-
-    public String getApp2Exchange() {
-        return app2Exchange;
-    }
-
-    public void setApp2Exchange(String app2Exchange) {
-        this.app2Exchange = app2Exchange;
-    }
-
-    public String getApp2Queue() {
-        return app2Queue;
-    }
-
-    public void setApp2Queue(String app2Queue) {
-        this.app2Queue = app2Queue;
-    }
-
-    public String getApp2RoutingKey() {
-        return app2RoutingKey;
-    }
-
-    public void setApp2RoutingKey(String app2RoutingKey) {
-        this.app2RoutingKey = app2RoutingKey;
+    public void setApplicationRoutingKey(String applicationRoutingKey) {
+        this.applicationRoutingKey = applicationRoutingKey;
     }
 }

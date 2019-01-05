@@ -2,7 +2,8 @@ package com.greensnow25.service.impl;
 
 import com.greensnow25.User;
 import com.greensnow25.config.ApplicationConfigReader;
-import com.greensnow25.service.MessangerService;
+import com.greensnow25.repository.UserRepository;
+import com.greensnow25.service.UserService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,13 +16,16 @@ import org.springframework.stereotype.Service;
  * 09.12.18
  */
 @Service
-public class MessangerServiceImpl implements MessangerService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @Autowired
     private ApplicationConfigReader applicationConfigReader;
+
+    @Autowired
+    private UserRepository userRepository;
 
 
     @Override
@@ -30,10 +34,15 @@ public class MessangerServiceImpl implements MessangerService {
         User user = new User();
         user.setAge("87");
 
-         rabbitTemplate.convertAndSend(applicationConfigReader.getApp1Exchange()
-                , applicationConfigReader.getApp1RoutingKey()
+        rabbitTemplate.convertAndSend(applicationConfigReader.getApplicationExchange()
+                , applicationConfigReader.getApplicationRoutingKey()
                 , user);
 
         return null;
+    }
+
+    @Override
+    public void addUser(User user) {
+        userRepository.addUser(user);
     }
 }

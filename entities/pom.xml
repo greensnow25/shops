@@ -9,8 +9,6 @@
     <version>1.0</version>
     <name>SpringEntities</name>
 
-
-
     <dependencies>
         <!-- Spring data mongodb -->
         <dependency>

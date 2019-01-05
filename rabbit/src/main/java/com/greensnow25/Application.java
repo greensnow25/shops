@@ -3,6 +3,7 @@ package com.greensnow25;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 /**
  * Class Application.
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 09.12.18
  */
 @SpringBootApplication
+@EnableCaching
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
